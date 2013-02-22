@@ -6,8 +6,9 @@ Need to work on Bugs like :
   Missing the actual flow of MVC (model, views and controller).  
 
 Folder structure for this application is as follows:
-  app
-    |- assets
+<pre>
+  app    
+    |- assets    
         |- fonts
         |- images
         |- javascripts
@@ -42,9 +43,7 @@ Folder structure for this application is as follows:
   session_settings.php
   signin.php
   ReadMe.txt
-  ------------------
-  
-  ------------------
+  </pre>
 
   Docs : this will hold the api for the project.
   Lib : will hold the external libraries/ plugins.
