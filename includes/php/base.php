@@ -94,3 +94,27 @@ function get_gm_datetime($date, $time = 0, $meridian = "") {
   $gmDate = gmdate('Y-m-d H:i:s', strtotime($d));
   return $gmDate;
 }
+
+function set_array($array, $value) {
+  if (!isset($array[$value])) {
+    array_push($array, $value);
+  }
+}
+
+function isnotset($var) {
+  return !isset($var);
+}
+
+function render($format, $value=''){
+  if($format=='text'){
+    $output = $value;
+  }else if($format=='partial'){
+    $filename = "_" . $value . '.html.php';
+    if(file_exists($filename)){
+      $output = file_get_contents($filename);
+    }else{
+      $output = 'The file does not exist';
+    }
+  }
+  echo $output;
+}

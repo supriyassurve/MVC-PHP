@@ -206,3 +206,40 @@ function pluralize($var, $strCount) {
   }
   return $str;
 }
+
+function text_area_tag($name, $value = "", $options = array()) {
+  $textarea = "<textarea name='$name' ";
+  if (!is_null($options)) {
+    foreach ($options as $key => $value) {
+      $textarea .= " $key=$value";
+    }
+  }
+  $textarea .= ">$value</textarea>";
+  echo $textarea;
+}
+
+function text_field_tag($name, $value = "", $options = array()) {
+  input_tag('text', $name, $value, $options);
+}
+
+function radio_button_tag($name, $value = "", $options = array()) {
+  input_tag('radio', $name, $value, $options);
+}
+
+function checkbox_tag($name, $value = "", $options = array()) {
+  input_tag('checkbox', $name, $value, $options);
+}
+
+function input_tag($type, $name, $value = "", $options = array()) {
+  $input = "<input type='$type' name='$name' ";
+  if (!is_null($value)) {
+    $input .= "value='$value' ";
+  }
+  if (!is_null($options)) {
+    foreach ($options as $key => $value) {
+      $input .= " $key=$value";
+    }
+  }
+  $input .= " />";
+  echo $input;
+}
